@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibermad | Consultoría Ambiental y Periciales</title>
+    <meta name="description"
+        content="Especialistas en periciales judiciales, licencias ambientales y gestión normativa para desguaces, vertederos y sector industrial en toda España.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { dark: '#13313D', DEFAULT: '#4285a0', light: '#7DB1C7' },
+                        accent: { DEFAULT: '#d67540', hover: '#B85B27' },
+                        slate: { 900: '#0F172A', 800: '#1E293B', 50: '#F8FAFC' }
+                    },
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+                        slideUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 antialiased selection:bg-accent selection:text-white flex flex-col min-h-screen">
+
+    <!-- Header / Nav -->
+    <header id="header"
+        class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div
+                        class="w-10 h-10 bg-brand-dark rounded-xl flex items-center justify-center text-white shadow-lg overflow-hidden">
+                        <img src="images/icons/icono_ibermad.jpeg" alt="Logo Ibermad" class="w-full h-full object-cover">
+                    </div>
+                    <span class="font-bold text-xl text-brand-dark tracking-tight">Ibermad <span
+                            class="font-normal text-slate-500 text-sm hidden sm:inline-block ml-1">| Consultoría
+                            Ambiental</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home"
+                        class="nav-link text-sm font-medium text-slate-600 hover:text-brand-dark transition-colors">Inicio</a>
+                    <a href="#servicios"
+                        class="nav-link text-sm font-medium text-slate-600 hover:text-brand-dark transition-colors">Servicios</a>
+                    <a href="#nosotros"
+                        class="nav-link text-sm font-medium text-slate-600 hover:text-brand-dark transition-colors">Sobre
+                        Nosotros</a>
+                    <a href="#contacto"
+                        class="nav-link text-sm font-medium text-slate-600 hover:text-brand-dark transition-colors">Contacto</a>
+                </nav>
+
+                <!-- CTA -->
+                <div class="hidden md:flex">
+                    <a href="#contacto"
+                        class="inline-flex items-center justify-center px-6 py-2.5 border border-transparent rounded-full shadow-sm text-sm font-semibold text-slate-900 bg-accent hover:bg-accent-hover transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5">
+                        Solicitar Asesoramiento
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-dark focus:outline-none p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-100 shadow-xl absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#home"
+                    class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-dark hover:bg-slate-50">Inicio</a>
+                <a href="#servicios"
+                    class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-dark hover:bg-slate-50">Servicios</a>
+                <a href="#nosotros"
+                    class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-dark hover:bg-slate-50">Sobre
+                    Nosotros</a>
+                <a href="#contacto"
+                    class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-dark hover:bg-slate-50">Contacto</a>
+                <div class="mt-4 px-3">
+                    <a href="#contacto"
+                        class="mobile-link w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-xl shadow-sm text-base font-medium text-white bg-brand-dark">
+                        Solicitar Asesoramiento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- App Content Wrapper -->
+    <main class="flex-grow pt-20" id="app-content">
+
+        <!-- ================= PAGE: HOME ================= -->
+        <div id="page-home" class="page-view animate-fade-in">
+            <!-- Hero Section -->
+            <section class="relative pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden bg-brand-dark text-white">
+                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div
+                        class="absolute -top-1/2 -right-1/4 w-[1000px] h-[1000px] rounded-full bg-accent opacity-20 blur-[120px]">
+                    </div>
+                    <div
+                        class="absolute -bottom-1/2 -left-1/4 w-[800px] h-[800px] rounded-full bg-brand-light opacity-30 blur-[100px]">
+                    </div>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center max-w-4xl mx-auto animate-slide-up">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-accent mb-6 text-sm font-medium">
+                            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                            Consultoría Ambiental Especializada
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]">
+                            Soluciones Técnicas y Legales en <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-brand-light">Medio
+                                Ambiente</span>
+                        </h1>
+                        <p
+                            class="mt-4 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+                            Especialistas en periciales judiciales, licencias ambientales y gestión normativa para
+                            desguaces, vertederos y sector industrial en toda España.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="#contacto"
+                                class="inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-full shadow-lg text-base font-bold text-slate-900 bg-accent hover:bg-accent-hover transition-all duration-300 hover:shadow-accent/40 hover:-translate-y-1">
+                                Hablar con un Perito Ambiental
+                            </a>
+                            <a href="#servicios"
+                                class="inline-flex items-center justify-center px-8 py-4 border border-white/20 rounded-full text-base font-semibold text-white bg-white/5 backdrop-blur-md hover:bg-white/10 transition-all duration-300">
+                                Explorar Servicios
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Trust Metrics -->
+                    <div class="mt-20 max-w-5xl mx-auto grid grid-cols-1 gap-6 sm:grid-cols-3 lg:gap-8 opacity-0 animate-fade-in"
+                        style="animation-delay: 0.4s;">
+                        <div
+                            class="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex items-center gap-4 hover:bg-white/15 transition-colors">
+                            <div class="p-3 bg-accent/20 rounded-xl text-accent">
+                                <i data-lucide="award" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-white">+15 años</p>
+                                <p class="text-sm text-slate-300">de experiencia</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex items-center gap-4 hover:bg-white/15 transition-colors">
+                            <div class="p-3 bg-accent/20 rounded-xl text-accent">
+                                <i data-lucide="map-pin" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-white">100%</p>
+                                <p class="text-sm text-slate-300">Cobertura Nacional</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex items-center gap-4 hover:bg-white/15 transition-colors">
+                            <div class="p-3 bg-accent/20 rounded-xl text-accent">
+                                <i data-lucide="file-check-2" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-white">+500</p>
+                                <p class="text-sm text-slate-300">Informes Emitidos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= PAGE: SERVICIOS ================= -->
+        <div id="page-servicios" class="page-view hidden animate-fade-in">
+            <section class="py-16 lg:py-24 bg-slate-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <h2 class="text-brand-dark font-bold tracking-wide uppercase text-sm mb-3">Nuestras Áreas de
+                            Especialización</h2>
+                        <h3 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Servicios Técnicos y Legales
+                        </h3>
+                        <p class="text-lg text-slate-600">Aportamos soluciones sólidas y con total validez jurídica
+                            frente a la administración pública y los tribunales.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                        <!-- Service 1 -->
+                        <div
+                            class="group relative bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+                            <div
+                                class="absolute top-0 right-0 w-32 h-32 bg-brand-light/5 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110">
+                            </div>
+                            <div
+                                class="w-14 h-14 bg-brand-dark rounded-2xl flex items-center justify-center text-accent mb-6 shadow-md">
+                                <i data-lucide="scale" class="w-7 h-7"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3">Periciales Ambientales y Defensa Legal
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed mb-6">Informes periciales rigurosos para procesos
+                                judiciales, evaluación de daños, vertidos, licencias y expedientes
+                                contenciosos-administrativos.</p>
+                            <a href="#contacto"
+                                class="inline-flex items-center text-accent font-semibold hover:text-brand-dark transition-colors">
+                                Solicitar peritaje <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+
+                        <!-- Service 2 -->
+                        <div
+                            class="group relative bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+                            <div
+                                class="w-14 h-14 bg-brand-dark rounded-2xl flex items-center justify-center text-accent mb-6 shadow-md">
+                                <i data-lucide="car" class="w-7 h-7"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3">Consultoría Técnica para Desguaces (CATs)
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed mb-6">Homologaciones, adecuación a la estricta
+                                normativa de gestión de residuos, redacción de memorias ambientales y tramitación de
+                                autorizaciones.</p>
+                            <a href="#contacto"
+                                class="inline-flex items-center text-accent font-semibold hover:text-brand-dark transition-colors">
+                                Gestionar licencia <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+
+                        <!-- Service 3 -->
+                        <div
+                            class="group relative bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+                            <div
+                                class="w-14 h-14 bg-brand-dark rounded-2xl flex items-center justify-center text-accent mb-6 shadow-md">
+                                <i data-lucide="trash-2" class="w-7 h-7"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3">Gestión y Legalización de Vertederos</h4>
+                            <p class="text-slate-600 leading-relaxed mb-6">Adecuación a la Directiva de Vertederos,
+                                diseño de planes de clausura, control de lixiviados y tramitación integral de licencias
+                                AAI.</p>
+                            <a href="#contacto"
+                                class="inline-flex items-center text-accent font-semibold hover:text-brand-dark transition-colors">
+                                Consultar viabilidad <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+
+                        <!-- Service 4 -->
+                        <div
+                            class="group relative bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+                            <div
+                                class="w-14 h-14 bg-brand-dark rounded-2xl flex items-center justify-center text-accent mb-6 shadow-md">
+                                <i data-lucide="microscope" class="w-7 h-7"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3">Auditorías e Impacto Ambiental</h4>
+                            <p class="text-slate-600 leading-relaxed mb-6">Evaluaciones de impacto ambiental (EIA),
+                                gestión de residuos peligrosos y auditorías de adecuación continua a la legislación
+                                vigente.</p>
+                            <a href="#contacto"
+                                class="inline-flex items-center text-accent font-semibold hover:text-brand-dark transition-colors">
+                                Solicitar auditoría <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= PAGE: SOBRE NOSOTROS ================= -->
+        <div id="page-nosotros" class="page-view hidden animate-fade-in">
+            <!-- About Us Section -->
+            <section class="py-16 lg:py-24 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                        <div class="mb-12 lg:mb-0 relative">
+                            <div class="absolute -inset-4 bg-brand-light/10 rounded-3xl transform rotate-3"></div>
+                            <div class="relative bg-slate-800 rounded-3xl h-[500px] overflow-hidden shadow-2xl">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-brand-dark via-slate-800 to-brand-light opacity-90">
+                                </div>
+                                <div
+                                    class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-slate-900/90 to-transparent">
+                                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
+                                        <div class="flex items-center gap-4 mb-4">
+                                            <div
+                                                class="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-brand-dark">
+                                                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-white font-bold text-lg">Seguridad Jurídica</h4>
+                                                <p class="text-slate-300 text-sm">Garantía en cada informe</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-slate-200 text-sm leading-relaxed">Nuestros peritajes ambientales
+                                            han sido clave en la resolución de más de 300 litigios a favor de la
+                                            industria.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-brand-dark font-bold tracking-wide uppercase text-sm mb-3">Tu Socio
+                                Estratégico</h2>
+                            <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">Rigor
+                                Técnico y Seguridad Jurídica para tu Empresa</h3>
+                            <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                                En Ibermad no solo entendemos el medio ambiente, dominamos su marco legal. Nos
+                                especializamos en la resolución de problemas legales complejos ante la administración y
+                                los juzgados.
+                            </p>
+
+                            <div class="space-y-6">
+                                <div class="flex">
+                                    <div class="flex-shrink-0">
+                                        <div
+                                            class="flex items-center justify-center h-12 w-12 rounded-xl bg-brand-light/10 text-brand-dark">
+                                            <i data-lucide="microscope" class="w-6 h-6"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-bold text-slate-900">Rigor Científico</h4>
+                                        <p class="mt-1 text-slate-600">Metodología probada y análisis técnico exhaustivo
+                                            que soporta el escrutinio judicial más exigente.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-shrink-0">
+                                        <div
+                                            class="flex items-center justify-center h-12 w-12 rounded-xl bg-brand-light/10 text-brand-dark">
+                                            <i data-lucide="lock" class="w-6 h-6"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-bold text-slate-900">Confidencialidad Absoluta</h4>
+                                        <p class="mt-1 text-slate-600">Tratamiento estricto de la información
+                                            corporativa sensible durante todo el proceso de consultoría.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Work Process Section -->
+            <section class="py-24 bg-brand-dark text-white relative overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center max-w-3xl mx-auto mb-20">
+                        <h2 class="text-accent font-bold tracking-wide uppercase text-sm mb-3">Metodología Ibermad</h2>
+                        <h3 class="text-3xl md:text-4xl font-extrabold mb-6">Nuestro Proceso de Trabajo</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                        <div
+                            class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-y-1/2 z-0">
+                        </div>
+
+                        <div class="relative z-10 flex flex-col items-center text-center group">
+                            <div
+                                class="w-20 h-20 bg-slate-800 border-4 border-brand-dark rounded-full flex items-center justify-center text-2xl font-bold text-accent mb-6 shadow-xl transition-all duration-300">
+                                1</div>
+                            <h4 class="text-xl font-bold mb-3">Diagnóstico Inicial</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Análisis exhaustivo del problema legal,
+                                normativo o sanción administrativa actual.</p>
+                        </div>
+                        <div class="relative z-10 flex flex-col items-center text-center group">
+                            <div
+                                class="w-20 h-20 bg-slate-800 border-4 border-brand-dark rounded-full flex items-center justify-center text-2xl font-bold text-accent mb-6 shadow-xl transition-all duration-300">
+                                2</div>
+                            <h4 class="text-xl font-bold mb-3">Estudio y Peritaje</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Inspección técnica in situ y redacción
+                                detallada del informe pericial.</p>
+                        </div>
+                        <div class="relative z-10 flex flex-col items-center text-center group">
+                            <div
+                                class="w-20 h-20 bg-slate-800 border-4 border-brand-dark rounded-full flex items-center justify-center text-2xl font-bold text-accent mb-6 shadow-xl transition-all duration-300">
+                                3</div>
+                            <h4 class="text-xl font-bold mb-3">Tramitación y Defensa</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Representación técnica especializada ante
+                                la administración o tribunales.</p>
+                        </div>
+                        <div class="relative z-10 flex flex-col items-center text-center group">
+                            <div
+                                class="w-20 h-20 bg-slate-800 border-4 border-brand-dark rounded-full flex items-center justify-center text-2xl font-bold text-accent mb-6 shadow-xl transition-all duration-300">
+                                4</div>
+                            <h4 class="text-xl font-bold mb-3">Resolución</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Obtención de licencias y cumplimiento
+                                normativo garantizado.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= PAGE: CONTACTO ================= -->
+        <div id="page-contacto" class="page-view hidden animate-fade-in">
+            <section class="py-16 lg:py-24 bg-slate-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <h2 class="text-brand-dark font-bold tracking-wide uppercase text-sm mb-3">Hablemos</h2>
+                        <h3 class="text-3xl md:text-5xl font-extrabold text-slate-900">Solicita Asesoramiento</h3>
+                    </div>
+
+                    <div class="bg-white rounded-[2.5rem] shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-5">
+                            <!-- Contact Info -->
+                            <div class="bg-brand-dark text-white p-6 sm:p-10 lg:p-14 lg:col-span-2 relative overflow-hidden">
+                                <div class="absolute bottom-0 right-0 w-64 h-64 bg-accent/20 rounded-tl-full blur-3xl">
+                                </div>
+                                <h3 class="text-3xl font-extrabold mb-4 relative z-10">Contacto Confidencial</h3>
+                                <p class="text-slate-300 mb-10 text-lg relative z-10">Contacta con nuestros peritos para
+                                    una evaluación inicial sin compromiso.</p>
+
+                                <div class="space-y-8 relative z-10">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 mt-1"><i data-lucide="phone"
+                                                class="w-6 h-6 text-accent"></i></div>
+                                        <div class="ml-4">
+                                            <h4 class="text-lg font-bold">Urgencias Técnicas</h4>
+                                            <p class="mt-1 text-slate-300">+34 661 43 68 75</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 mt-1"><i data-lucide="mail"
+                                                class="w-6 h-6 text-accent"></i></div>
+                                        <div class="ml-4">
+                                            <h4 class="text-lg font-bold">Atención Técnica</h4>
+                                            <p class="mt-1 text-slate-300">ibermad@ibermad.es</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 mt-1"><i data-lucide="map-pin"
+                                                class="w-6 h-6 text-accent"></i></div>
+                                        <div class="ml-4">
+                                            <h4 class="text-lg font-bold">Sede Central</h4>
+                                            <p class="mt-1 text-slate-300">Av. de la Industria 42<br>28001 Madrid,
+                                                España</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Form -->
+                            <div class="p-6 sm:p-10 lg:p-14 lg:col-span-3">
+                                <form id="contact-form" class="space-y-6">
+                                    <input type="hidden" name="access_key" value="d9efd2fb-8970-465c-a028-87bc1beb5e33">
+                                    <input type="hidden" name="subject" value="Nueva consulta desde la web de Ibermad">
+                                    <input type="hidden" name="from_name" value="Ibermad Web Contact">
+                                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="name"
+                                                class="block text-sm font-medium text-slate-700 mb-1">Nombre
+                                                Completo</label>
+                                            <input type="text" id="name" name="name" required
+                                                class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand-dark/20 focus:border-brand-dark transition-colors outline-none">
+                                        </div>
+                                        <div>
+                                            <label for="company"
+                                                class="block text-sm font-medium text-slate-700 mb-1">Empresa /
+                                                Sector</label>
+                                            <input type="text" id="company" name="company" required
+                                                class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand-dark/20 focus:border-brand-dark transition-colors outline-none">
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="phone"
+                                                class="block text-sm font-medium text-slate-700 mb-1">Teléfono</label>
+                                            <input type="tel" id="phone" name="phone" required
+                                                class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand-dark/20 focus:border-brand-dark transition-colors outline-none">
+                                        </div>
+                                        <div>
+                                            <label for="email"
+                                                class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                                            <input type="email" id="email" name="email" required
+                                                class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand-dark/20 focus:border-brand-dark transition-colors outline-none">
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-1 gap-6">
+                                        <div>
+                                            <label for="service"
+                                                class="block text-sm font-medium text-slate-700 mb-1">Tipo de
+                                                Consulta</label>
+                                            <select id="service" name="service" required
+                                                class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand-dark/20 focus:border-brand-dark transition-colors outline-none appearance-none">
+                                                <option value="" disabled selected>Selecciona un área...</option>
+                                                <option value="pericial">Pericial Judicial</option>
+                                                <option value="desguaces">Consultoría Desguaces (CATs)</option>
+                                                <option value="vertederos">Legalización de Vertederos</option>
+                                                <option value="auditoria">Auditoría Ambiental</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="message"
+                                            class="block text-sm font-medium text-slate-700 mb-1">Detalles del
+                                            Caso</label>
+                                        <textarea id="message" name="message" rows="4" required
+                                            class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand-dark/20 focus:border-brand-dark transition-colors outline-none resize-none"></textarea>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="privacy-policy" name="privacy-policy" type="checkbox" required class="w-4 h-4 text-brand-dark bg-slate-100 border-slate-300 rounded focus:ring-brand-dark focus:ring-2">
+                                        </div>
+                                        <label for="privacy-policy" class="ml-2 text-sm text-slate-600">
+                                            He leído y acepto la <button type="button" onclick="openModal('legal-modal', 'Política de Privacidad')" class="text-brand-dark hover:underline font-medium">Política de Privacidad</button>.
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <button type="submit"
+                                            class="w-full flex justify-center items-center py-4 px-8 rounded-xl shadow-lg text-lg font-bold text-white bg-brand-dark hover:bg-brand-light transition-all duration-300">
+                                            Enviar Consulta Confidencial
+                                            <i data-lucide="send" class="w-5 h-5 ml-2"></i>
+                                        </button>
+                                    </div>
+                                    <div class="mt-4 p-4 bg-slate-50 rounded-lg text-xs text-slate-500 border border-slate-100 leading-relaxed">
+                                        <strong>Información básica sobre protección de datos:</strong><br>
+                                        <strong>Responsable:</strong> Ibermad Consultoría Ambiental S.L.<br>
+                                        <strong>Finalidad:</strong> Gestión de su consulta técnica o legal.<br>
+                                        <strong>Legitimación:</strong> Su consentimiento explícito al marcar la casilla.<br>
+                                        <strong>Derechos:</strong> Acceso, rectificación, supresión y otros derechos detallados en la <button type="button" onclick="openModal('legal-modal', 'Política de Privacidad')" class="text-brand-dark hover:underline">Política de Privacidad</button>.
+                                    </div>
+                                    <div id="form-success"
+                                        class="hidden rounded-xl bg-emerald-50 p-4 border border-emerald-100 mt-4">
+                                        <div class="flex">
+                                            <i data-lucide="check-circle"
+                                                class="h-5 w-5 text-emerald-400 flex-shrink-0"></i>
+                                            <div class="ml-3">
+                                                <h3 class="text-sm font-medium text-emerald-800">Mensaje enviado correctamente. Un perito te contactará pronto.</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="form-error"
+                                        class="hidden rounded-xl bg-red-50 p-4 border border-red-100 mt-4">
+                                        <div class="flex">
+                                            <i data-lucide="x-circle"
+                                                class="h-5 w-5 text-red-400 flex-shrink-0"></i>
+                                            <div class="ml-3">
+                                                <h3 class="text-sm font-medium text-red-800">Ocurrió un error al enviar el formulario. Por favor, inténtalo de nuevo.</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+                <!-- Col 1 -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div
+                            class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-slate-900 shadow-lg overflow-hidden">
+                            <img src="images/icons/icono_ibermad.jpeg" alt="Logo Ibermad" class="w-full h-full object-cover">
+                        </div>
+                        <span class="font-bold text-xl text-white tracking-tight">Ibermad</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm leading-relaxed mb-6">Consultoría Ambiental especializada en
+                        ingeniería, periciales y cumplimiento legal para empresas e industrias en toda España.</p>
+                </div>
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Servicios Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#servicios" class="hover:text-accent transition-colors">Periciales Judiciales</a>
+                        </li>
+                        <li><a href="#servicios" class="hover:text-accent transition-colors">Gestión de Desguaces</a>
+                        </li>
+                        <li><a href="#servicios" class="hover:text-accent transition-colors">Legalización Vertederos</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><button onclick="openModal('legal-modal', 'Política de Privacidad')"
+                                class="hover:text-accent transition-colors">Política de Privacidad</button></li>
+                        <li><button onclick="openModal('legal-modal', 'Aviso Legal')"
+                                class="hover:text-accent transition-colors">Aviso Legal</button></li>
+                        <li><button onclick="openModal('legal-modal', 'Política de Cookies')"
+                                class="hover:text-accent transition-colors">Política de Cookies</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">&copy; 2026 Ibermad Consultoría Ambiental. Todos los derechos
+                    reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Legal Modal -->
+    <div id="legal-modal" class="fixed inset-0 z-[100] hidden" aria-modal="true">
+        <div class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity"
+            onclick="closeModal('legal-modal')"></div>
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center">
+                <div
+                    class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all w-full max-w-lg border border-slate-100">
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
+                            <div
+                                class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 sm:mx-0 sm:h-10 sm:w-10">
+                                <i data-lucide="file-text" class="h-5 w-5 text-slate-600"></i>
+                            </div>
+                            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
+                                <h3 class="text-xl font-bold leading-6 text-slate-900" id="modal-title-text">Documento
+                                    Legal</h3>
+                                <div class="mt-4 max-h-[60vh] overflow-y-auto pr-2 text-sm text-slate-600 space-y-4 text-left" id="modal-content-area">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 border-t border-slate-100">
+                        <button type="button" onclick="closeModal('legal-modal')"
+                            class="inline-flex w-full justify-center rounded-xl bg-brand-dark px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-light sm:ml-3 sm:w-auto transition-colors">
+                            Entendido, cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden templates for legal text -->
+    <template id="tpl-aviso-legal">
+        <h4 class="font-bold text-slate-800">1. Datos Identificativos</h4>
+        <p>Razón Social: Ibermad Consultoría Ambiental S.L.<br>
+        NIF: B-12345678<br>
+        Dirección física: Av. de la Industria 42, 28001 Madrid, España.<br>
+        Email de contacto: ibermad@ibermad.es</p>
+        <h4 class="font-bold text-slate-800 mt-4">2. Registro Mercantil</h4>
+        <p>Inscrita en el Registro Mercantil de Madrid, Tomo 1234, Folio 56, Sección 8, Hoja M-123456.</p>
+        <p>Este sitio web proporciona información sobre los servicios de peritaje e ingeniería de la empresa. El uso del sitio implica la aceptación plena de este aviso legal.</p>
+    </template>
+
+    <template id="tpl-politica-privacidad">
+        <h4 class="font-bold text-slate-800">1. Responsable del Tratamiento</h4>
+        <p>Ibermad Consultoría Ambiental S.L. es el responsable del tratamiento de los datos personales recopilados a través del formulario de contacto.</p>
+        <h4 class="font-bold text-slate-800 mt-4">2. Finalidad y Conservación</h4>
+        <p>Los datos (nombre, teléfono, email, sector) se utilizarán exclusivamente para gestionar su consulta técnica o legal y enviarle presupuestos o información relevante. Los datos se conservarán mientras exista interés mutuo o durante los años necesarios para cumplir obligaciones legales.</p>
+        <h4 class="font-bold text-slate-800 mt-4">3. Derechos de los Usuarios</h4>
+        <p>Puede ejercer sus derechos de acceso, rectificación, supresión, oposición y limitación enviando un email a <strong>ibermad@ibermad.es</strong> adjuntando copia de su DNI.</p>
+    </template>
+
+    <template id="tpl-politica-cookies">
+        <h4 class="font-bold text-slate-800">¿Qué son las cookies?</h4>
+        <p>Son pequeños ficheros de texto que se descargan en tu navegador para mejorar la experiencia de usuario.</p>
+        <h4 class="font-bold text-slate-800 mt-4">Tipos de cookies que utilizamos</h4>
+        <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Técnicas (Necesarias):</strong> Permiten el funcionamiento básico de la web. Siempre están activas.</li>
+            <li><strong>Analíticas:</strong> Utilizamos Google Analytics para entender cómo navegan los usuarios (solo si das tu consentimiento explícito).</li>
+        </ul>
+        <p class="mt-4">Puedes configurar o revocar tu consentimiento en cualquier momento eliminando las cookies en las preferencias de tu navegador web.</p>
+    </template>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[90] bg-slate-900 border-t border-slate-800 text-white shadow-2xl transform transition-transform duration-500 translate-y-full">
+        <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex-1 text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
+                    <i data-lucide="cookie" class="w-5 h-5 text-accent"></i>
+                    <h3 class="font-bold text-lg">Tu privacidad nos importa</h3>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    Utilizamos cookies propias (técnicas) y de terceros (analíticas) para mejorar nuestros servicios. Ninguna cookie analítica se cargará hasta que des tu consentimiento explícito. 
+                    <button onclick="openModal('legal-modal', 'Política de Cookies')" class="text-accent hover:underline">Ver Política</button>.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 w-full md:w-auto shrink-0 mt-2 md:mt-0">
+                <button id="btn-config-cookies" class="px-4 py-2 rounded-lg border border-slate-600 text-xs sm:text-sm font-semibold hover:bg-slate-800 transition-colors w-full sm:w-auto">
+                    Configurar
+                </button>
+                <button id="btn-reject-cookies" class="px-4 py-2 rounded-lg border border-slate-600 text-xs sm:text-sm font-semibold hover:bg-slate-800 transition-colors w-full sm:w-auto">
+                    Rechazar
+                </button>
+                <button id="btn-accept-cookies" class="px-4 py-2 rounded-lg bg-accent text-slate-900 text-xs sm:text-sm font-bold hover:bg-accent-hover transition-colors shadow-lg shadow-accent/20 w-full sm:w-auto">
+                    Aceptar todas
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

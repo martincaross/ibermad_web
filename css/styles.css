@@ -1,0 +1,25 @@
+/* Custom Styles for Ibermad Landing Page */
+
+/* Ensure smooth scrolling across the page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base resets and micro-adjustments */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism active class for header */
+.header-scrolled {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom-color: rgba(226, 232, 240, 0.8) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Fix for anchor links overlapping with fixed header */
+section[id] {
+    scroll-margin-top: 5rem; /* Height of the sticky header */
+}
