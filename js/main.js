@@ -1,7 +1,7 @@
 // SPA Router Logic
 function handleRouting() {
     const hash = window.location.hash || '#home';
-    const pageId = 'page-' + hash.substring(1);
+    const pageId = 'page-' + hash.substring(1).split('?')[0];
     
     // Hide all pages
     document.querySelectorAll('.page-view').forEach(page => {
@@ -19,6 +19,15 @@ function handleRouting() {
     // Reset scroll to top smoothly or instantly
     window.scrollTo({ top: 0, behavior: 'instant' });
     lucide.createIcons();
+}
+
+// Function to select service and navigate to contact form
+function selectService(serviceValue) {
+    const serviceSelect = document.getElementById('service');
+    if (serviceSelect && serviceValue) {
+        serviceSelect.value = serviceValue;
+    }
+    window.location.hash = '#contacto';
 }
 
 // Listen for hash changes (when user clicks links or uses back button)
